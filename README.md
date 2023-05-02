@@ -3,7 +3,7 @@
 ## KNX NetCat Handler
 
 This simple script handle standard nc reverse shell (from linux and windows) and elevate it to a full TTY shell.
-Thx to socat and ConPtyShell [@splintercode](https://github.com/splintercode)
+Thx to socat and ConPtyShell [@splintercode](https://github.com/antonioCoco)
 
 ## Requisities
 - pwntools
@@ -50,11 +50,11 @@ Alternatively, you can generate them yourself:
 **socat linux:**
 Using the statically compiled version of socat 64 bit for linux run a trivial:
 ```
-cat socat |base64 -wo
+cat <socat> |base64 -wo
 ```
 
 **ConPtyShell**
-From the official @splintercode repo compile the version in .cs and then encode it in base64 using certutil from a windows terminal:
+From the official [@splintercode](https://github.com/antonioCoco/ConPtyShell) repo compile the version in .cs and then encode it in base64 using certutil from a windows terminal:
 ```
-certutil -encode <path\conpty.exe> <output_path\conpty>.
+certutil -encode <path\ConPtyShell.exe> <output_path\conpty>.
 ```
