@@ -40,3 +40,21 @@ When a new connection arrives, it copies socat or ConptyShell, in linux or windo
 In linux socat allows a full TTY with history, autocomplete commands, intercepts CTRL+C so as not to kill the shell by mistake, allows using arrows to go back in case of errors or to recall previous commands. It also allows editing files with vim, nano and all other editors that require an interactive shell.
 
 In windows ConPtyShell allows you to have a fully interactive Powershell reverse shell, with autocompletion of commands and their parameters, also allows the use of arrows.
+
+## Final note for paranoid users
+
+If you don't trust the 2 base64 encoded files, you can decode them into a binary file and reverse engineer them to verify the contents.
+
+Alternatively, you can generate them yourself:
+
+**socat linux:**
+Using the statically compiled version of socat 64 bit for linux run a trivial:
+```
+cat socat |base64 -wo
+```
+
+**ConPtyShell**
+From the official @splintercode repo compile the version in .cs and then encode it in base64 using certutil from a windows terminal:
+```
+certutil -encode <path\conpty.exe> <output_path\conpty>.
+```
