@@ -18,6 +18,14 @@ Example:
 python3 knc.py -l 192.168.1.45 80
 ```
 
+## Installation
+Clone the repo and be sure pwntools is installed
+```
+pip install pwntools
+```
+
+You can also make a symlink for your convenience.
+
 ## How it works
 knc starts a tcp listener on the port specified in the standard input and waits for an incoming connection.
 
